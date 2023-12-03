@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>网站开发中</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+    .header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+	 .container {
+      text-align: center;
+      margin-top: 10px;
+    }
+    .container button {
+		padding: 10px 20px;
+		font-size: 16px;
+		background-color: #4CAF50;
+		color: #fff;
+		border: none;
+		cursor: pointer;
+		transition: background-color 0.3s ease;
+	  }
+
+	  .container button:hover {
+		background-color: #45a049;
+	  }
+    .content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px;
+    }
+    .center-link {
+      text-align: center;
+	   margin-bottom: 40px;
+    }
+    .feature {
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  margin-bottom: 40px;
+	}
+
+	.feature img {
+	  flex: 1;
+	  max-width: 200px; /* 调整图像的最大宽度 */
+	  height: 200px; /* 自动计算图像的高度 */
+	  border-radius: 50%; /* 将图像设置为圆形 */
+	  overflow: hidden; /* 隐藏超出边界的部分 */
+	  margin-right: 80px; /* 在图像之间增加20像素的右侧间隔 */
+	  transition: transform 0.3s ease; /* 添加过渡效果 */
+	}
+
+	.feature img:hover {
+	  transform: scale(1.1); /* 鼠标悬停时放大图像 */
+	}
+	
+	.footer {
+	  background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+	  margin-top: 10px;
+	}
+  </style>
+</head>
+<body>
+  <header class="header">
+    <h1>ケキ、ケキ、丸いケキ</h1>
+    <div class="audio-container">
+      <audio id="audio-player" src="../video/video1.mp3" controls autoplay></audio>
+    </div>
+  </header>
+  <section class="content">
+    <div class="center-link">
+      <a href="https://www.bilibili.com/bangumi/media/md2539">网站开发中，欢迎观看魔法少女小圆</a>
+    </div>
+    <div class="feature">
+      <img src="../picture/image1.jpg" alt="Feature Image">
+      <img src="../picture/image2.jpg" alt="Feature Image">
+      <img src="../picture/image3.jpg" alt="Feature Image">
+    </div>
+    <h2>网站介绍</h2>
+    <p>这是一个网站开发中的示例页面，使用HTML和CSS创建。</p>
+    <h2>特点</h2>
+    <ul>
+      <li>最新的魔法少女小圆资讯</li>
+      <li>观看魔法少女小圆视频</li>
+      <li>参与讨论和社区</li>
+    </ul>
+  </section>
+  <div class="container">
+    <button id="myButton">跳转</button>
+  </div>
+
+  <script>
+    document.getElementById("myButton").addEventListener("click", function() {
+      window.location.href = "homura.html";
+    });
+  </script>
+  <footer class = "footer">
+	<p>&copy;都快2024年了，快来看马猴烧酒吧</p>
+  </footer>
+</body>
+</html>

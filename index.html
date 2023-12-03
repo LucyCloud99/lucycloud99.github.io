@@ -1,113 +1,196 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>网站开发中</title>
+  <title>欢迎来到www.homura.fun~</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f9f9f9;
       margin: 0;
       padding: 0;
+      overflow: hidden;
     }
-    .header {
-      background-color: #333;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-    }
-	 .container {
-      text-align: center;
-      margin-top: 10px;
-    }
-    .container button {
-		padding: 10px 20px;
-		font-size: 16px;
-		background-color: #4CAF50;
-		color: #fff;
-		border: none;
-		cursor: pointer;
-		transition: background-color 0.3s ease;
-	  }
 
-	  .container button:hover {
-		background-color: #45a049;
-	  }
+    .background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url(./picture/nazu.png);
+      background-size: cover;
+      filter: blur(0px);
+      transition: filter 0.5s ease;
+      z-index: -1;
+    }
+
     .content {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 40px;
-    }
-    .center-link {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       text-align: center;
-	   margin-bottom: 40px;
-    }
-    .feature {
-	  display: flex;
-	  justify-content: center;
-	  align-items: center;
-	  margin-bottom: 40px;
-	}
-
-	.feature img {
-	  flex: 1;
-	  max-width: 200px; /* 调整图像的最大宽度 */
-	  height: 200px; /* 自动计算图像的高度 */
-	  border-radius: 50%; /* 将图像设置为圆形 */
-	  overflow: hidden; /* 隐藏超出边界的部分 */
-	  margin-right: 80px; /* 在图像之间增加20像素的右侧间隔 */
-	  transition: transform 0.3s ease; /* 添加过渡效果 */
-	}
-
-	.feature img:hover {
-	  transform: scale(1.1); /* 鼠标悬停时放大图像 */
-	}
-	
-	.footer {
-	  background-color: #333;
       color: #fff;
-      padding: 20px;
+    }
+
+    h1 {
+      font-size: 36px;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+	
+	.time {
+      font-size: 24px;
       text-align: center;
-	  margin-top: 10px;
-	}
+      margin-top: 20px;
+	  color: #fff;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #fff;
+      color: #333;
+      font-size: 18px;
+      text-decoration: none;
+      border-radius: 4px;
+	  cursor: default;
+    }
+	
+	.webpage-by-wei {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      color: #fff;
+      font-size: 12px;
+    }
+
+    .scene {
+     position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+	  white-space: nowrap;
+    }
+
+    .scene.active {
+      opacity: 1;
+      visibility: visible;
+    }
+	 .toggle-switch {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      z-index: 1;
+    }
+
+    .toggle-switch input[type="checkbox"] {
+      display: none;
+    }
+
+    .toggle-switch label {
+      position: relative;
+      display: inline-block;
+      width: 40px;
+      height: 20px;
+      background-color: #ccc;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .toggle-switch label:before {
+      content: "";
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: 16px;
+      height: 16px;
+      background-color: #fff;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+    }
+
+    .toggle-switch input[type="checkbox"]:checked + label {
+      background-color: #008000; /* 开启状态的背景颜色 */
+    }
+
+    .toggle-switch input[type="checkbox"]:checked + label:before {
+      transform: translateX(20px); /* 开启状态下的位置 */
+    }
   </style>
 </head>
 <body>
-  <header class="header">
-    <h1>ケキ、ケキ、丸いケキ</h1>
-    <div class="audio-container">
-      <audio id="audio-player" src="video1.mp3" controls autoplay></audio>
-    </div>
-  </header>
-  <section class="content">
-    <div class="center-link">
-      <a href="https://www.bilibili.com/bangumi/media/md2539">网站开发中，欢迎观看魔法少女小圆</a>
-    </div>
-    <div class="feature">
-      <img src="./picture/image1.jpg" alt="Feature Image">
-      <img src="./picture/image2.jpg" alt="Feature Image">
-      <img src="./picture/image3.jpg" alt="Feature Image">
-    </div>
-    <h2>网站介绍</h2>
-    <p>这是一个网站开发中的示例页面，使用HTML和CSS创建。</p>
-    <h2>特点</h2>
-    <ul>
-      <li>最新的魔法少女小圆资讯</li>
-      <li>观看魔法少女小圆视频</li>
-      <li>参与讨论和社区</li>
-    </ul>
-  </section>
-  <div class="container">
-    <button id="myButton">跳转</button>
+  <div class="background"></div>
+  <div class="toggle-switch"> <!-- 新增开关按钮 -->
+    <input type="checkbox" id="switch" onchange="switchScene()"> <!-- 新增开关按钮的checkbox元素 -->
+    <label for="switch"></label> <!-- 新增开关按钮的label元素 -->
   </div>
+  <div class="time" id="current-time"></div>
+  <div class="content">
+    <div class="scene scene1 active">
+      <h1>Welcome to My Website</h1>
+      <p>Experience the best in class services</p>
+      <a href="./webpage/main.html" class="button"  onmouseover="blurBackground(10)" onmouseout="blurBackground(0)">Get Started</a>
+    </div>
+    <div class="scene scene2">
+      <h1>あなたと紅葉、私はどちらも好きです</h1>
+      <p>welcome to the scene 2 </p>
+      <a href="./webpage/main.html" class="button" onmouseover="blurBackground(10)" onmouseout="blurBackground(0)">Get Started</a>
+    </div>
+  </div>
+  <div class="webpage-by-wei">Webpage By Wei</div>
+  <script>
+    function updateTime() {
+      var currentTime = new Date();
+      var hours = currentTime.getHours();
+      var minutes = currentTime.getMinutes();
+      var seconds = currentTime.getSeconds();
+
+      hours = (hours < 10 ? "0" : "") + hours;
+      minutes = (minutes < 10 ? "0" : "") + minutes;
+      seconds = (seconds < 10 ? "0" : "") + seconds;
+
+      var timeString = "Current Time : " + hours + ":" + minutes + ":" + seconds;
+      document.getElementById("current-time").textContent = timeString;
+    }
+
+    setInterval(updateTime, 1000); // 每隔一秒更新时间
+
+    function switchScene() { // 修改switchScene函数
+      var scene1 = document.querySelector('.scene1');
+      var scene2 = document.querySelector('.scene2');
+      var background = document.querySelector('.background');
+      var switchButton = document.getElementById('switch');
+
+      scene1.classList.toggle('active');
+      scene2.classList.toggle('active');
+      background.style.backgroundImage = 'url(' + (switchButton.checked ? './picture/aki.png' : './picture/nazu.png') + ')'; // 根据开关状态切换背景图片
+
+      // 修改场景可见性
+      if (scene1.classList.contains('active')) {
+        scene1.style.opacity = 1;
+        scene1.style.visibility = 'visible';
+        scene2.style.opacity = 0;
+        scene2.style.visibility = 'hidden';
+      } else {
+        scene1.style.opacity = 0;
+        scene1.style.visibility = 'hidden';
+        scene2.style.opacity = 1;
+        scene2.style.visibility = 'visible';
+      }
+    }
+	
+  </script>
 
   <script>
-    document.getElementById("myButton").addEventListener("click", function() {
-      window.location.href = "homura.html";
-    });
+    function blurBackground(blurValue) {
+      var background = document.querySelector('.background');
+      background.style.filter = 'blur(' + blurValue + 'px)';
+    }
   </script>
-  <footer class = "footer">
-	<p>&copy;都快2024年了，快来看马猴烧酒吧</p>
-  </footer>
 </body>
 </html>
