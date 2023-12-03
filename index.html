@@ -66,11 +66,31 @@
     </style>
 </head>
 <body>
-<p><a href="https://www.bilibili.com/bangumi/media/md2539">网站开发中，欢迎观看魔法少女小圆</a>
     <header class="header">
         <h1>ケキ、ケキ、丸いケキ</h1>
     </header>
+	<p><a href="https://www.bilibili.com/bangumi/media/md2539">网站开发中，欢迎观看魔法少女小圆</a>
+	<audio id="audio-player" src="video1.mp3" controls autoplay></audio>
+	<script>
+    // 获取音频元素
+    var audioPlayer = document.getElementById("audio-player");
 
+    // 播放按钮点击事件
+    function playMusic() {
+        audioPlayer.play();
+    }
+
+    // 暂停按钮点击事件
+    function pauseMusic() {
+        audioPlayer.pause();
+    }
+
+    // 停止按钮点击事件
+    function stopMusic() {
+        audioPlayer.pause();
+        audioPlayer.currentTime = 0;
+    }
+</script>
     <section class="content">
         <div class="feature">
             <img src="image1.jpg" alt="Feature Image">
