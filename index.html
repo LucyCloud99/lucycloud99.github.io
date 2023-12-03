@@ -16,6 +16,23 @@
       padding: 20px;
       text-align: center;
     }
+	 .container {
+      text-align: center;
+      margin-top: 10px;
+    }
+    .container button {
+		padding: 10px 20px;
+		font-size: 16px;
+		background-color: #4CAF50;
+		color: #fff;
+		border: none;
+		cursor: pointer;
+		transition: background-color 0.3s ease;
+	  }
+
+	  .container button:hover {
+		background-color: #45a049;
+	  }
     .content {
       max-width: 800px;
       margin: 0 auto;
@@ -23,6 +40,7 @@
     }
     .center-link {
       text-align: center;
+	   margin-bottom: 40px;
     }
     .feature {
 	  display: flex;
@@ -37,12 +55,20 @@
 	  height: 200px; /* 自动计算图像的高度 */
 	  border-radius: 50%; /* 将图像设置为圆形 */
 	  overflow: hidden; /* 隐藏超出边界的部分 */
-	  margin-right: 20px; /* 在图像之间增加20像素的右侧间隔 */
+	  margin-right: 80px; /* 在图像之间增加20像素的右侧间隔 */
 	  transition: transform 0.3s ease; /* 添加过渡效果 */
 	}
 
 	.feature img:hover {
 	  transform: scale(1.1); /* 鼠标悬停时放大图像 */
+	}
+	
+	.footer {
+	  background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+	  margin-top: 10px;
 	}
   </style>
 </head>
@@ -71,5 +97,17 @@
       <li>参与讨论和社区</li>
     </ul>
   </section>
+  <div class="container">
+    <button id="myButton">跳转</button>
+  </div>
+
+  <script>
+    document.getElementById("myButton").addEventListener("click", function() {
+      window.location.href = "homura.html";
+    });
+  </script>
+  <footer class = "footer">
+	<p>&copy;都快2024年了，快来看马猴烧酒吧</p>
+  </footer>
 </body>
 </html>
