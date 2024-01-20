@@ -278,6 +278,15 @@
 .v .item .tag.investor {
   background-color: var(--color-pink);
 }
+.v .item .tag.shaonv {
+  background-color: var(--color-orange);
+}
+.v .item .tag.monv {
+  background-color: var(--color-pink);
+}
+.v .item .tag.qb {
+  background-color: var(--color-aqua);
+}
 .v .item .at {
   color: var(--primary-color);
 }
