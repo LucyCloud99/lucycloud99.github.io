@@ -269,15 +269,6 @@
   margin-right: 0.5rem;
   background-color: var(--color-grey);
 }
-.v .item .tag.master {
-  background-color: var(--color-orange);
-}
-.v .item .tag.friend {
-  background-color: var(--color-aqua);
-}
-.v .item .tag.investor {
-  background-color: var(--color-pink);
-}
 .v .item .tag.shaonv {
   background-color: var(--color-orange);
 }
