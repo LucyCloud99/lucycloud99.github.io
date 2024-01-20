@@ -2244,10 +2244,10 @@ main >.inner {
   color: #00aff0;
 }
 .social .item.bilibili::before {
-  background-color: #ffe6fa;
+  background-color: #ed6ea0;
 }
 .social .item.bilibili i {
-  color: #ffe6fa;
+  color: #ed6ea0;
 }
 .social .item.about::before {
   background-color: #3b5998;
