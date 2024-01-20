@@ -2639,7 +2639,7 @@ const siteInit = function () {
   visibilityListener()
   themeColorListener()
 
-  algoliaSearch(pjax)
+  localSearch(pjax)
 
   window.addEventListener('scroll', scrollHandle)
 
