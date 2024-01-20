@@ -2250,10 +2250,10 @@ main >.inner {
   color: #55acd5;
 }
 .social .item.bilibili::before {
-  background-color: ilibil;
+  background-color: var(--color-pink);
 }
 .social .item.bilibili i {
-  color: ilibil;
+  color: var(--color-pink);
 }
 .social .item.about::before {
   background-color: #3b5998;
