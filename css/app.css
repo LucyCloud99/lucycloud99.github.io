@@ -2243,23 +2243,23 @@ main >.inner {
 .social .item.twitter i {
   color: #00aff0;
 }
-.social .item.email::before {
-  background-color: #55acd5;
-}
-.social .item.email i {
-  color: #55acd5;
-}
 .social .item.bilibili::before {
-  background-color: var(--color-pink);
+  background-color: #ffe6fa;
 }
 .social .item.bilibili i {
-  color: var(--color-pink);
+  color: #ffe6fa;
 }
 .social .item.about::before {
   background-color: #3b5998;
 }
 .social .item.about i {
   color: #3b5998;
+}
+.social .item.email::before {
+  background-color: #55acd5;
+}
+.social .item.email i {
+  color: #55acd5;
 }
 .social .item:focus i,
 .social .item:hover i {
