@@ -10,8 +10,26 @@
         </author>
         <description>欢迎来到砂的笔记世界，这里主要记录学习笔记和随手记</description>
         <language>zh-CN</language>
-        <pubDate>Mon, 22 Jan 2024 03:21:35 +0800</pubDate>
-        <lastBuildDate>Mon, 22 Jan 2024 03:21:35 +0800</lastBuildDate>
+        <pubDate>Mon, 22 Jan 2024 04:32:09 +0800</pubDate>
+        <lastBuildDate>Mon, 22 Jan 2024 04:32:09 +0800</lastBuildDate>
+        <item>
+            <guid isPermalink="true">https://blog.homura.fun/301%E9%87%8D%E5%AE%9A%E5%90%91%E7%9A%84%E9%94%99%E8%AF%AF/</guid>
+            <title>301重定向的错误</title>
+            <link>https://blog.homura.fun/301%E9%87%8D%E5%AE%9A%E5%90%91%E7%9A%84%E9%94%99%E8%AF%AF/</link>
+            <category term="question" scheme="https://blog.homura.fun/categories/question/" />
+            <category term="bug" scheme="https://blog.homura.fun/tags/bug/" />
+            <pubDate>Mon, 22 Jan 2024 04:32:09 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;301重定向&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#301重定向&#34;&gt;#&lt;/a&gt; 301 重定向&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;今天遇到一个 301 重定向问题，访问链接走的是 https 没有问题，但是会被重定向到 http 协议，导致文章的归档中，跳转有问题抛出异常。&lt;/li&gt;
+&lt;li&gt;检测发现问题可能出在 CDN 处，当请求被送到 cdn 处后，cdn 与服务器（此处为 github Page）链接不太正常，只能走 http。&lt;/li&gt;
+&lt;li&gt;当关闭 CDN，直连 Github 则无异常，虽然也重定向了，但那属于域名解析的重定向，是 308 临时重定向。&lt;/li&gt;
+&lt;li&gt;但问题是，不用 CDN 国内访问 GitHub 速度感人，所以 CDN 得用。&lt;/li&gt;
+&lt;li&gt;但现在突然发现又可以了，虽然 301 重定向还在，但能正常打开归档的小类。&lt;/li&gt;
+&lt;li&gt;可问题是手机端不行了，我不太清楚现在是页面缓存导致我未走 CDN 代理 https，还是其他问题。&lt;/li&gt;
+&lt;/ul&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">https://blog.homura.fun/hello-world/</guid>
             <title>Hello World</title>

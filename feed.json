@@ -7,6 +7,17 @@
     "home_page_url": "https://blog.homura.fun",
     "items": [
         {
+            "id": "https://blog.homura.fun/301%E9%87%8D%E5%AE%9A%E5%90%91%E7%9A%84%E9%94%99%E8%AF%AF/",
+            "url": "https://blog.homura.fun/301%E9%87%8D%E5%AE%9A%E5%90%91%E7%9A%84%E9%94%99%E8%AF%AF/",
+            "title": "301重定向的错误",
+            "date_published": "2024-01-21T20:32:09.000Z",
+            "content_html": "<h1 id=\"301重定向\"><a class=\"anchor\" href=\"#301重定向\">#</a> 301 重定向</h1>\n<ul>\n<li>今天遇到一个 301 重定向问题，访问链接走的是 https 没有问题，但是会被重定向到 http 协议，导致文章的归档中，跳转有问题抛出异常。</li>\n<li>检测发现问题可能出在 CDN 处，当请求被送到 cdn 处后，cdn 与服务器（此处为 github Page）链接不太正常，只能走 http。</li>\n<li>当关闭 CDN，直连 Github 则无异常，虽然也重定向了，但那属于域名解析的重定向，是 308 临时重定向。</li>\n<li>但问题是，不用 CDN 国内访问 GitHub 速度感人，所以 CDN 得用。</li>\n<li>但现在突然发现又可以了，虽然 301 重定向还在，但能正常打开归档的小类。</li>\n<li>可问题是手机端不行了，我不太清楚现在是页面缓存导致我未走 CDN 代理 https，还是其他问题。</li>\n</ul>\n",
+            "tags": [
+                "question",
+                "bug"
+            ]
+        },
+        {
             "id": "https://blog.homura.fun/hello-world/",
             "url": "https://blog.homura.fun/hello-world/",
             "title": "Hello World",
