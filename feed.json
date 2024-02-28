@@ -7,6 +7,16 @@
     "home_page_url": "https://blog.homura.fun",
     "items": [
         {
+            "id": "https://blog.homura.fun/%E4%B8%8A%E8%AF%BE%E7%AC%AC%E4%B8%89%E5%A4%A9/",
+            "url": "https://blog.homura.fun/%E4%B8%8A%E8%AF%BE%E7%AC%AC%E4%B8%89%E5%A4%A9/",
+            "title": "上课第三天",
+            "date_published": "2024-02-28T09:06:27.000Z",
+            "content_html": "<h1 id=\"上课第三天\"><a class=\"anchor\" href=\"#上课第三天\">#</a> 上课第三天</h1>\n<ul>\n<li>今天是周三，小雨，现在是在专业的实验室里面自习。</li>\n<li>今天登陆了一下服务器，一切运行正常，访问速度也变快了。</li>\n<li>看来还是没有每天写日记的习惯呢，毕竟是在网上，也就分享一下公开的事情吧。</li>\n<li><span class=\"rainbow\">感觉还行，慢慢找回学习的状态，今年寒假也经历了不少的事情，心态也有所变化吧，现在而言还是往好的方向发展的</span></li>\n<li>听听今日的分享吧，要相信爱情哦</li>\n</ul>\n<p><div class=\"media-container\"><div class=\"player\" data-type=\"audio\" data-src='[{\"title\":\"列表 1\",\"list\":[\"https://music.163.com/#/song?id=2010029751\"]}]'></div></div></p>\n",
+            "tags": [
+                "school"
+            ]
+        },
+        {
             "id": "https://blog.homura.fun/le/",
             "url": "https://blog.homura.fun/le/",
             "title": "le",
