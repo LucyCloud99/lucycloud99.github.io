@@ -8,7 +8,62 @@
     <author>
       <name>Suna</name>
     </author>
-    <updated>2024-03-08T12:03:21.000Z</updated>
+    <updated>2024-03-26T09:31:36.000Z</updated>
+    <entry>
+        <id>https://blog.homura.fun/Docker-learn-day1/</id>
+        <title>Docker-learn-day1</title>
+        <link rel="alternate" href="https://blog.homura.fun/Docker-learn-day1/"/>
+        <content type="html">&lt;h1 id=&#34;docker-learn-day1&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#docker-learn-day1&#34;&gt;#&lt;/a&gt; Docker-learn-day1&lt;/h1&gt;
+&lt;h2 id=&#34;第一篇-什么是docker&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#第一篇-什么是docker&#34;&gt;#&lt;/a&gt; 第一篇 什么是 Docker&lt;/h2&gt;
+&lt;h3 id=&#34;容器&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#容器&#34;&gt;#&lt;/a&gt; 容器&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;容器：描述一个物理资源隔离的运行环境的术语。&lt;/li&gt;
+&lt;li&gt;Docker 组成：Docker 包括一个命令行程序，一个守护进程和一组远程服务。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;容器不是虚拟化&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#容器不是虚拟化&#34;&gt;#&lt;/a&gt; 容器不是虚拟化&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Docker 容器不使用硬件虚拟化，它直接与 Linux 内核打交道。&lt;/li&gt;
+&lt;li&gt;容器存在已久，Docker 并不提供容器技术，只是 Docker 的出现方便了容器的使用。&lt;/li&gt;
+&lt;li&gt;Docker 依赖：LXC（Linux Container）和 Cgroups（Control Groups）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;docker构建的容器隔离&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#docker构建的容器隔离&#34;&gt;#&lt;/a&gt; Docker 构建的容器隔离&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;PID 命名空间 ———— 进程标识符和能力&lt;/li&gt;
+&lt;li&gt;UTS 命名空间 ———— 主机名和域名&lt;/li&gt;
+&lt;li&gt;MNT 命名空间 ———— 文件系统访问和结构&lt;/li&gt;
+&lt;li&gt;IPC 命名空间 ———— 通过共享内存的进程间通信&lt;/li&gt;
+&lt;li&gt;NET 命名空间 ———— 网络访问和结构&lt;/li&gt;
+&lt;li&gt;USR 命名空间 ———— 用户名和标识&lt;/li&gt;
+&lt;li&gt;chroot（） ———— 控制文件系统根目录的位置&lt;/li&gt;
+&lt;li&gt;cgroups    ———— 资源保护&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;分发容器&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#分发容器&#34;&gt;#&lt;/a&gt; 分发容器&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;命名空间和 cgroups 管理运行着的容器，而 Docker 另一套技术（镜像）像运输集装箱一样为文件提供容器。&lt;/li&gt;
+&lt;li&gt;一个 Docker 容器 = 一个集装箱，用于打包和分发的软件实现的组件就是 Docker 镜像。&lt;/li&gt;
+&lt;li&gt;镜像在 Docker 生态系统中是可交付的基本单位。&lt;/li&gt;
+&lt;li&gt;简化分发镜像的基础设施组件：注册服务器 + 索引服务器（包括官方和其他托管公司）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;第二篇-docker解决什么问题&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#第二篇-docker解决什么问题&#34;&gt;#&lt;/a&gt; 第二篇 Docker 解决什么问题&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;软件越多，潜在风险越大，并且越难管理。&lt;/li&gt;
+&lt;li&gt;组织有序&lt;/li&gt;
+&lt;li&gt;提高可移植性&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;组织有序&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#组织有序&#34;&gt;#&lt;/a&gt; 组织有序&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;“如果没有 Docker，一台机器运行完看起来就像一个装满垃圾的抽屉”&lt;/li&gt;
+&lt;li&gt;小 tips：/lib 目录为 Linux 操作系统库文件目录，因此一些依赖的名字都是以 lib 为前缀的。&lt;/li&gt;
+&lt;li&gt;运行在容器中的应用程序与各自的依赖互相捆绑在一起，在此之前是互相交错的状态。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;提高可移植性&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#提高可移植性&#34;&gt;#&lt;/a&gt; 提高可移植性&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;虽然没有办法完全移植，因为想这样做需要构建整个可移植的软件版本。&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+        <category term="learn" scheme="https://blog.homura.fun/tags/learn/" />
+        <updated>2024-03-26T09:31:36.000Z</updated>
+    </entry>
     <entry>
         <id>https://blog.homura.fun/%E5%AE%9E%E4%B9%A0%E5%B0%8F%E7%9F%A5%E8%AF%86/</id>
         <title>实习小知识</title>
@@ -147,61 +202,6 @@
 </content>
         <category term="school" scheme="https://blog.homura.fun/tags/school/" />
         <updated>2024-02-28T09:06:27.000Z</updated>
-    </entry>
-    <entry>
-        <id>https://blog.homura.fun/le/</id>
-        <title>le</title>
-        <link rel="alternate" href="https://blog.homura.fun/le/"/>
-        <content type="html">&lt;h1 id=&#34;上午&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#上午&#34;&gt;#&lt;/a&gt; 上午&lt;/h1&gt;
-&lt;p&gt;&lt;div class=&#34;links&#34;&gt;&lt;div class=&#34;item&#34; title=&#34;Suna砂&#34; style=&#34;--block-color:#e9546b;&#34;&gt;&lt;span class=&#34;exturl image&#34; data-url=&#34;aHR0cHM6Ly93d3cuaG9tdXJhLmZ1bi9sZS8=&#34; data-background-image=&#34;https://dlink.host/wx1.sinaimg.cn/large/008CyJWoly8hm1clmc3taj30tp0u0n3d.jpg&#34;&gt;&lt;/span&gt;
-          &lt;div class=&#34;info&#34;&gt;
-          &lt;span class=&#34;exturl title&#34; data-url=&#34;aHR0cHM6Ly93d3cuaG9tdXJhLmZ1bi9sZS8=&#34;&gt;Record!!樂!!&lt;/span&gt;
-          &lt;p class=&#34;desc&#34;&gt;素晴らしい一日でした&lt;/p&gt;
-          &lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;今天是 2024 年 1 月 31 日，天气多云但是带点小太阳，温度 14℃，气温&lt;ins class=&#34;dot primary&#34;&gt;舒适&lt;/ins&gt;偏&lt;ins class=&#34;dot primary&#34;&gt;微冷&lt;/ins&gt;，心情愉悦&lt;s class=&#34;danger&#34;&gt;且热情&lt;/s&gt;。&lt;/li&gt;
-&lt;li&gt;早上睡到了&lt;span class=&#34;spoiler&#34; title=&#34;你知道得太多了&#34;&gt;十点&lt;/span&gt;自然醒，洗漱一番后发了一条加油的消息，然后坐在客厅。&lt;/li&gt;
-&lt;li&gt;中午因为亲戚乔迁之喜，去一家饭店吃饭。&lt;/li&gt;
-&lt;li&gt;大概一点多开始，下午两点半结束，出去时候看到天气晴朗，收到 L 信息说考试顺利通过，当然先祝贺啦，然后就想着天气这么好出去散散步咯。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&#34;下午&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#下午&#34;&gt;#&lt;/a&gt; 下午&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;打车去汇合，因为路太堵被取消订单了，无奈 `(&lt;em&gt;&amp;gt;﹏&amp;lt;&lt;/em&gt;)′，只能扫共享出发了。总共 30 分钟的时间。&lt;/li&gt;
-&lt;li&gt;本想着直接出发，但因为需要准备一下，所以还是先等等吧。等待，烤火，聊天。没一会就过去了两小时。&lt;/li&gt;
-&lt;li&gt;终于还是想起了去散步这回事，这个时候正好也有家人回来了。&lt;/li&gt;
-&lt;li&gt;因为错过一趟绿灯，导致看着一辆公交从眼前驶过，多等了一会，L 说 15 分钟一趟，倒是很准呢。&lt;/li&gt;
-&lt;li&gt;出发公交，太久没坐公交的我已经是时隔 6 年&lt;span class=&#34;spoiler&#34; title=&#34;你知道得太多了&#34;&gt;可能更久&lt;/span&gt;再一次坐 4 路车，在 L 的带路下坐了两站就到了广场处。&lt;/li&gt;
-&lt;li&gt;徒步从广场走到体育场，然后进去逛了一圈，许多学生般年龄大小的年轻人在里面，羽毛球运动居多，篮球运动其次，三个乒乓球台倒是空空的，不知道是不是在旁边的乒乓球馆里面。今天高尔夫那儿倒是没有看见，我记得很久以前一起来打球的时候，总能够看到里面有人在的。对了还有一些人坐在长椅上，兴许是累了亦或者是休闲吧。&lt;/li&gt;
-&lt;li&gt;离开体育场去公园散步，刚走过大门的时候就看到一对行人，L 一眼就说这是大学生，这是高中生，(・̀ .̫・́)✧，似乎年龄会给人很明显的印象呢，不过对于 L 为什么看起来还是 18 岁那样，对此我稍稍疑惑。随即我们从一端走到了另一端，途中经过了游乐设施，看到了跳楼机，我才是第一次知道这儿有，但 L 早知道了。L 觉得鬼屋不可怕，我觉得还是有一点点怖い ( *︾▽︾) 多恐怖倒也没有。&lt;/li&gt;
-&lt;li&gt;然后就是绕着公园散步，竹子弯弯曲曲的，L 说是被雪压弯的，我赞同。小路不宽，一方石子一方石板，若是两人同侧则略显拥挤，石子还是有点不平坦的，或许是南风的原因，还有些许的滑。&lt;/li&gt;
-&lt;li&gt;走了一阵后，在公园的亭子闲坐，休息一会。&lt;/li&gt;
-&lt;li&gt;值得纪念的一天。1/31/24&lt;/li&gt;
-&lt;li&gt;公园树多，若是不走走的话，终究还是会感到冷的。随后我们开始往下走，转折路口没有走坡路，走 L 选择的台阶。虽说我觉得斜坡才有爬山的感觉，但下次我应该会选择走台阶上吧。又路过游乐设施，我说整点冰激凌，当然是开玩笑的啦。然后就回到了我们进门的那个门口。&lt;/li&gt;
-&lt;li&gt;出门左转是去哪了，对此我并不知道。但 L 却轻车熟路，同时也算是解开了为什么我跟她表述同一段路不同结果的疑惑，好吧答案就是我不知道这个门通往这边。&lt;/li&gt;
-&lt;li&gt;在门口一时兴起给 L 悄悄拍了一张，下次还是好好地拍一张吧。&lt;/li&gt;
-&lt;li&gt;在门口处我们讨论接下来去哪儿。跟 L 聊到了新华书店那边的一家电影院的话题，聊了一会天，但是天也黑了，下次订好票再去吧。去我以前生活的地方吗，下次有时间再去那边吧。乐一下转移了话题，有点心疼她。&lt;/li&gt;
-&lt;li&gt;最后还是选择了走一遍上学的路，与其说真怀念从前，倒不如说我现在更喜欢当下，喜欢这个时隔多年还能再次一起走过上学之路的当下。如果最开始的我没有勇气踏出第一步的话，那么遗憾或许是终身的吧，若是平行时空存在的话，这个时间线或许是其他时间线做梦也无法企及的，就像玩过的《サクラノモリ†ドリームーズ》&lt;span class=&#34;label danger&#34;&gt;樱之杜†净梦者&lt;/span&gt;第二部一样，过着的生活是慎司再也无法企及但是却真实发生的事情，慎司和圆香的将来。&lt;/li&gt;
-&lt;li&gt;走到了我们的初中的校门口，若是去我家则需要走过初中和一中，若是回家则是走另外的路。校园里面食堂门口的柏油路的路灯还亮着，但教学楼漆黑一片，还是不进去了吧黑的有点幽的感觉。&lt;/li&gt;
-&lt;li&gt;于是走过了合江，聊到了我曾见过的 L 的同学，虽然叫什么和长什么样我都忘记了，但这件事情我居然还记得，呃呃 (￣﹏￣;;) 我明明记得我不喜欢记住一些琐碎的事的。&lt;/li&gt;
-&lt;li&gt;接着的是一段闲暇的散步时光，路边泛黄的街灯，长久未变的门面，这样漫步的两人，似乎一切都在向前，似乎一切又都没有改变。我不愿去窥探未来的光景，过去与现在即是我拥有的一切。&lt;/li&gt;
-&lt;li&gt;曾经我错误的以为，表达出来的心声将会变得廉价，就像超市喇叭大喊的促销产品，都不被看好一样。但这种错误的观点，在一次次的错过与过错中，被完美的诠释了。&lt;/li&gt;
-&lt;li&gt;走过 L 曾经走过的路，并未直接回家，往前一小段距离，就到了一个湖。平日我家并非此处，在自行车没用了之后，我很少再像从前一样绕着整个小城环行了，因此我是第一次来。&lt;/li&gt;
-&lt;li&gt;听 L 说，如果站在湖的对岸，小山丘遮住小小的房屋，在夏日的某个夕阳时分，这儿的景色会格外美丽。我想一定要找个时间再来拍张照片。&lt;/li&gt;
-&lt;li&gt;绕着湖慢慢的散步，染黄的柳条没有生气地布在湖边的小径，低头走过像是在向柳树们问好。&lt;/li&gt;
-&lt;li&gt;走过另一条有路灯的小路，最后到了湖边，在路上 L 问我，你知道这边是哪儿么，这已经是不是第一次提出这个问题了，L 似乎也看出了我晚上没有方向感这一回事了。&lt;/li&gt;
-&lt;li&gt;我们在马路与湖之间的人行道上，一边坐在有位置的地方，一边聊着共同的话题。从生活中的细小琐事，到不同地方的新见新闻，再到关于未来各自的观点。&lt;/li&gt;
-&lt;li&gt;这段看似日常的生活，也许是曾经走错一步都不会实现的现在。珍惜吧，二十岁的你。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;note success&#34;&gt;
-&lt;p&gt;去成为别人的依靠吧&lt;/p&gt;
-&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;s&gt;下次饭点了记得吃饭 = v=&lt;/s&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</content>
-        <category term="Life" scheme="https://blog.homura.fun/categories/Life/" />
-        <category term="life" scheme="https://blog.homura.fun/tags/life/" />
-        <updated>2024-01-31T16:47:56.000Z</updated>
     </entry>
     <entry>
         <id>https://blog.homura.fun/fail/</id>
